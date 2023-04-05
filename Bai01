@@ -1,1 +1,80 @@
+abstract class HangSanXuat {
+    String tenHangSanXuat;
+    private String tenQuocGia;
+}
 
+
+public abstract class PhuongTienDiChuyen extends HangSanXuat{
+    protected String loaiPhuongTien;
+    protected HangSanXuat hangSanXuat;
+    public String layTenHangSanXuat () {
+        return tenHangSanXuat;
+    }
+    public void batdau() {};
+    public void tangtoc() {};
+    public void dunglai() {};
+    abstract double layvantoc();
+}
+
+
+public class MayBay extends PhuongTienDiChuyen{
+    public String loaiNhienLieu;
+    
+    public  void catcanh(){
+        System.out.println("land");
+    }
+
+    public void hacanh(){
+        System.out.println("aboard");
+    }
+
+    public void batdau() {
+        System.out.println("start");
+    }
+
+    public void tangtoc() {
+        System.out.println("speed");
+    }
+
+    public void dunglai() {
+        System.out.println("stop");
+    }
+
+    @Override
+    double layvantoc() {
+        return 0;
+    }
+
+}
+
+
+
+public class XeDap extends PhuongTienDiChuyen{
+    @Override
+    double layvantoc(){
+        return 0;
+    }
+}
+
+
+
+public class XeOto extends PhuongTienDiChuyen{
+    public String loaiNhienLieu;
+    @Override
+    double layvantoc(){
+        return 0;
+    }
+}
+
+
+
+public class main {
+    public static void main(String[] args) {
+        MayBay plane = new MayBay();
+        XeOto car = new XeOto();
+        XeDap bike = new XeDap();
+
+        plane.catcanh();
+        plane.hacanh();
+    }
+}
