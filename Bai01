@@ -1,9 +1,11 @@
+//HangSanXuat
 abstract class HangSanXuat {
     String tenHangSanXuat;
     private String tenQuocGia;
 }
 
 
+//PhuongTienDiChuyen
 public abstract class PhuongTienDiChuyen extends HangSanXuat{
     protected String loaiPhuongTien;
     protected HangSanXuat hangSanXuat;
@@ -17,6 +19,7 @@ public abstract class PhuongTienDiChuyen extends HangSanXuat{
 }
 
 
+//MayBay
 public class MayBay extends PhuongTienDiChuyen{
     public String loaiNhienLieu;
     
@@ -48,7 +51,7 @@ public class MayBay extends PhuongTienDiChuyen{
 }
 
 
-
+//XeDap
 public class XeDap extends PhuongTienDiChuyen{
     @Override
     double layvantoc(){
@@ -58,6 +61,7 @@ public class XeDap extends PhuongTienDiChuyen{
 
 
 
+//XeOto
 public class XeOto extends PhuongTienDiChuyen{
     public String loaiNhienLieu;
     @Override
@@ -68,13 +72,22 @@ public class XeOto extends PhuongTienDiChuyen{
 
 
 
+//main
 public class main {
     public static void main(String[] args) {
         MayBay plane = new MayBay();
         XeOto car = new XeOto();
         XeDap bike = new XeDap();
-
+        
+        System.out.println("plane: ");
         plane.catcanh();
         plane.hacanh();
+        
+        System.out.println("car: ");
+        car.loaiNhienLieu();
+        car.layvantoc();
+        
+        System.out.println("bike: ");
+        bike.layvantoc();
     }
 }
