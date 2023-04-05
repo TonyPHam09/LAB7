@@ -1,1 +1,85 @@
+interface moveable {
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+}
 
+
+
+public class moveablepoint implements moveable{
+    int x;
+    int y;
+    int speedx;
+    int speedy;
+
+    public moveablepoint(int x, int y, int speedx, int speedy){
+        this.x = x;
+        this.y = y;
+        this.speedx = speedx;
+        this.speedy = speedy;
+    }
+
+    @Override
+    public void moveUp() {
+
+    }
+
+    @Override
+    public void moveDown() {
+
+    }
+
+    @Override
+    public void moveLeft() {
+
+    }
+
+    @Override
+    public void moveRight() {
+
+    }
+}
+
+
+
+class moveablecircle implements moveable{
+
+    @Override
+    public void moveUp() {
+        this.moveUp();
+        System.out.println("up");
+    }
+
+    @Override
+    public void moveDown() {
+        this.moveDown();
+        System.out.println("down");
+    }
+
+    @Override
+    public void moveLeft() {
+        this.moveLeft();
+        System.out.println("left");
+    }
+
+    @Override
+    public void moveRight() {
+        this.moveRight();
+        System.out.println("right");
+    }
+}
+
+
+
+public class main {
+    public static void main(String[] args) {
+        moveablecircle mc = new moveablecircle();
+
+        System.out.println("circle move: ");
+        mc.moveUp();
+        mc.moveDown();
+        mc.moveLeft();
+        mc.moveRight();
+    }
+}
